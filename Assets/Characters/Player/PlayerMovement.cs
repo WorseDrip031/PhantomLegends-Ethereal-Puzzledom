@@ -10,10 +10,14 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 1f;
 
     private Vector2 movement;
+    private bool canMove = true;
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if (canMove)
+        {
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
     }
 
     void OnMove(InputValue movementValue)
@@ -29,5 +33,20 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsIdle", true);
         }
+    }
+
+    void OnAttack()
+    {
+        animator.SetTrigger("Attack");
+    }
+
+    public void LockPlayerMovement()
+    {
+        //canMove = false;
+    }
+
+    public void UnlockPlayerMovement()
+    {
+        canMove = true;
     }
 }

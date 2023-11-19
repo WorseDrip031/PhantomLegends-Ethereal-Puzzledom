@@ -10,6 +10,11 @@ public class Player : MonoBehaviour
     [SerializeField] float Speed;
     [SerializeField] float XP;
 
+    [SerializeField] Animator animator;
+    [SerializeField] Rigidbody2D rb;
+
+    private bool isAlive = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,5 +45,32 @@ public class Player : MonoBehaviour
     public void increaseXP(float amount)
     {
         XP += amount;
+    }
+
+    public void InflictDamage(float damage, Vector2 knockback)
+    {
+        float damageDealt = damage - Defense;
+        if (damageDealt > 0)
+        {
+            animator.SetTrigger("BeingHit");
+            Health -= damageDealt;
+            if ((Health <= 0) && (isAlive))
+            {
+                isAlive = false;
+                Defeated();
+            }
+            rb.AddForce(knockback);
+        }
+    }
+
+    public void Defeated()
+    {
+        animator.SetTrigger("Defeated");
+        rb.simulated = false;
+    }
+
+    public void RemovePlayer()
+    {
+        Destroy(gameObject);
     }
 }

@@ -27,6 +27,16 @@ public class Enemy : MonoBehaviour
 
     }
 
+    public float getEnemyAttack()
+    {
+        return Attack;
+    }
+
+    public float getEnemySpeed()
+    {
+        return Speed;
+    }
+
     public float InflictDamage(float damage, Vector2 knockback)
     {
         float damageDealt = damage - Defense;
@@ -48,6 +58,7 @@ public class Enemy : MonoBehaviour
     public void Defeated()
     {
         animator.SetTrigger("Defeated");
+        rb.simulated = false;
     }
 
     public void RemoveEnemy()

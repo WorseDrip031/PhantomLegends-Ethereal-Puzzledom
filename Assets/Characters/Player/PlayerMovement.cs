@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Animator animator;
-    public Rigidbody2D rb;
-    public float moveSpeed = 1f;
+    [SerializeField] Player player;
+    [SerializeField] Animator animator;
+    [SerializeField] Rigidbody2D rb;
 
     private Vector2 movement;
     private bool canMove = true;
@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canMove)
         {
-            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+            rb.MovePosition(rb.position + movement * player.getPlayerSpeed() * Time.fixedDeltaTime);
         }
     }
 
@@ -33,11 +33,6 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsIdle", true);
         }
-    }
-
-    void OnAttack()
-    {
-        animator.SetTrigger("Attack");
     }
 
     public void LockPlayerMovement()

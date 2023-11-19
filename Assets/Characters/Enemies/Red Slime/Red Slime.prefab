@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6829110092409188023}
   - component: {fileID: 5446328508084343321}
   - component: {fileID: 5652248244566944399}
+  - component: {fileID: 2423052803099186021}
   m_Layer: 0
   m_Name: Red Slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +101,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 25
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -170,3 +171,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2423052803099186021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898336834906664810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce9c34e813160eb459b8d738fdd89acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 60
+  Attack: 25
+  Defense: 15
+  Speed: 1.5
+  XPAward: 35
+  animator: {fileID: 5652248244566944399}
+  rb: {fileID: 6829110092409188023}

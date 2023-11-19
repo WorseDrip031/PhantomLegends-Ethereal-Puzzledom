@@ -10827,96 +10827,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1942854366375103481, guid: 87004ef7ea51eb24cb9603e68595093e, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5338834665157678308, guid: 87004ef7ea51eb24cb9603e68595093e, type: 3}
-      propertyPath: m_Name
-      value: SwordHitbox_Right
-      objectReference: {fileID: 0}
-    - target: {fileID: 5920790352865068055, guid: 87004ef7ea51eb24cb9603e68595093e, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.195
-      objectReference: {fileID: 0}
-    - target: {fileID: 5920790352865068055, guid: 87004ef7ea51eb24cb9603e68595093e, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 5920790352865068055, guid: 87004ef7ea51eb24cb9603e68595093e, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6828401551840081590, guid: 87004ef7ea51eb24cb9603e68595093e, type: 3}
-      propertyPath: m_Name
-      value: SwordHitbox_Up
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231078726444340631, guid: 87004ef7ea51eb24cb9603e68595093e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231078726444340631, guid: 87004ef7ea51eb24cb9603e68595093e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4267813426006569391, guid: 87004ef7ea51eb24cb9603e68595093e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 699650920137333282}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87004ef7ea51eb24cb9603e68595093e, type: 3}
---- !u!1 &699650920137333281 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4267813426006569391, guid: 87004ef7ea51eb24cb9603e68595093e, type: 3}
-  m_PrefabInstance: {fileID: 699650920137333280}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &699650920137333282
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 699650920137333281}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.2}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.1}
-  m_EdgeRadius: 0
 --- !u!1001 &2898716115670441947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11213,10 +11128,6 @@ PrefabInstance:
     - target: {fileID: 1845889550398476927, guid: 5f702954931f63c43aaa16552f68db37, type: 3}
       propertyPath: m_Name
       value: Green Slime
-      objectReference: {fileID: 0}
-    - target: {fileID: 1845889550398476927, guid: 5f702954931f63c43aaa16552f68db37, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8446686410923104552, guid: 5f702954931f63c43aaa16552f68db37, type: 3}
       propertyPath: m_LocalPosition.x

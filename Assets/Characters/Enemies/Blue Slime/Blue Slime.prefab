@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 5547707651282587524}
   - component: {fileID: 6641974657705911271}
   - component: {fileID: 7516929239327928091}
+  - component: {fileID: 6154502650016232040}
   m_Layer: 0
   m_Name: Blue Slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +101,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 25
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -170,3 +171,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6154502650016232040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5402692328069091472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce9c34e813160eb459b8d738fdd89acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 50
+  Attack: 20
+  Defense: 15
+  Speed: 1.25
+  XPAward: 25
+  animator: {fileID: 7516929239327928091}
+  rb: {fileID: 5547707651282587524}

@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 492804042526519144}
   - component: {fileID: 7553850506559851756}
   - component: {fileID: 3635020397313714093}
+  - component: {fileID: 1266688236131921461}
+  - component: {fileID: 4917925484051158949}
   m_Layer: 0
   m_Name: Red Goblin
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +102,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 25
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -146,7 +148,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.005275846, y: -0.03340398}
+  m_Offset: {x: -0.005275846, y: -0.03677892}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -157,7 +159,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.07073224, y: 0.07554579}
+  m_Size: {x: 0.07073224, y: 0.06879591}
   m_EdgeRadius: 0
 --- !u!95 &3635020397313714093
 Animator:
@@ -180,3 +182,78 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1266688236131921461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5398887644966699897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce9c34e813160eb459b8d738fdd89acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 130
+  Attack: 50
+  Defense: 20
+  Speed: 1.5
+  XPAward: 100
+  animator: {fileID: 3635020397313714093}
+  rb: {fileID: 492804042526519144}
+--- !u!60 &4917925484051158949
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5398887644966699897}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.025020763, y: 0.059883736}
+      - {x: -0.07155733, y: 0.022101332}
+      - {x: -0.077626616, y: -0.0243584}
+      - {x: -0.03704323, y: -0.071206406}
+      - {x: 0.018637827, y: -0.04614825}
+      - {x: 0.058521584, y: 0.01474667}
+      - {x: 0.031673566, y: 0.1012064}
+      - {x: 0.026148237, y: 0.11225708}
+      - {x: 0.023152009, y: 0.13031144}
+      - {x: -0.02883304, y: 0.12852159}
+      - {x: -0.08688747, y: 0.109105065}
+  m_UseDelaunayMesh: 0

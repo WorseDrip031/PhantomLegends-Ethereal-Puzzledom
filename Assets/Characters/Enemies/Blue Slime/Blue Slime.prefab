@@ -75,7 +75,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.25}
+  m_Size: {x: 0.17, y: 0.25}
   m_EdgeRadius: 0
 --- !u!1 &5402692328069091472
 GameObject:
@@ -266,7 +266,7 @@ MonoBehaviour:
   Health: 50
   Attack: 20
   Defense: 15
-  Speed: 1.25
+  Speed: 1
   XPAward: 25
   animator: {fileID: 7516929239327928091}
   rb: {fileID: 5547707651282587524}
@@ -277,15 +277,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5402692328069091472}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76ff2754e1e1a0e4f88a32096e5f113b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistanceThreshold: 1
   attackDistanceThreshold: 0.225
-  attackDelay: 1
-  passedTime: 1
+  attackDelay: 2
+  passedTime: 2
   KonckbackForce: 50
   enemy: {fileID: 6154502650016232040}
   player: {fileID: 0}
@@ -368,5 +368,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.25}
+  m_Size: {x: 0.17, y: 0.25}
   m_EdgeRadius: 0

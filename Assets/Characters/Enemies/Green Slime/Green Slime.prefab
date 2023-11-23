@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8264492422566907637}
   - component: {fileID: 7806647543167180142}
   - component: {fileID: 1217345718098176189}
+  - component: {fileID: 7848375063932688638}
   m_Layer: 0
   m_Name: Green Slime
   m_TagString: Enemy
@@ -192,6 +193,29 @@ MonoBehaviour:
   XPAward: 15
   animator: {fileID: 7806647543167180142}
   rb: {fileID: 4183212525099017268}
+--- !u!114 &7848375063932688638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845889550398476927}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ff2754e1e1a0e4f88a32096e5f113b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistanceThreshold: 1
+  attackDistanceThreshold: 0.225
+  attackDelay: 2
+  passedTime: 2
+  KonckbackForce: 50
+  enemy: {fileID: 1217345718098176189}
+  player: {fileID: 0}
+  animator: {fileID: 7806647543167180142}
+  rb: {fileID: 4183212525099017268}
+  attackColliderLeft: {fileID: 5859109358504246478}
+  attackColliderRight: {fileID: 4952699985161699984}
 --- !u!1 &3790899203564992042
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +242,7 @@ Transform:
   m_GameObject: {fileID: 3790899203564992042}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -231,7 +255,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3790899203564992042}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -253,7 +277,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.065, y: -0.015}
@@ -267,7 +291,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.25}
+  m_Size: {x: 0.17, y: 0.25}
   m_EdgeRadius: 0
 --- !u!1 &6627872532139968570
 GameObject:
@@ -295,7 +319,7 @@ Transform:
   m_GameObject: {fileID: 6627872532139968570}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -308,7 +332,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6627872532139968570}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -330,7 +354,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.085, y: -0.015}
@@ -344,5 +368,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.25}
+  m_Size: {x: 0.17, y: 0.25}
   m_EdgeRadius: 0

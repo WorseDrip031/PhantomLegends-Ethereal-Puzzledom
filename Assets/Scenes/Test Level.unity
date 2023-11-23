@@ -11050,53 +11050,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2332292126093690240, guid: ca306a3b25fb72540a353f6f4cfee724, type: 3}
-      propertyPath: m_Size.x
-      value: 0.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 2332292126093690240, guid: ca306a3b25fb72540a353f6f4cfee724, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5270798853273573167, guid: ca306a3b25fb72540a353f6f4cfee724, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1874907696}
-    - target: {fileID: 5270798853273573167, guid: ca306a3b25fb72540a353f6f4cfee724, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270798853273573167, guid: ca306a3b25fb72540a353f6f4cfee724, type: 3}
-      propertyPath: passedTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270798853273573167, guid: ca306a3b25fb72540a353f6f4cfee724, type: 3}
-      propertyPath: attackDelay
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270798853273573167, guid: ca306a3b25fb72540a353f6f4cfee724, type: 3}
-      propertyPath: KonckbackForce
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270798853273573167, guid: ca306a3b25fb72540a353f6f4cfee724, type: 3}
-      propertyPath: attackDistanceThreshold
-      value: 0.225
-      objectReference: {fileID: 0}
     - target: {fileID: 5402692328069091472, guid: ca306a3b25fb72540a353f6f4cfee724, type: 3}
       propertyPath: m_Name
       value: Blue Slime
-      objectReference: {fileID: 0}
-    - target: {fileID: 5402692328069091472, guid: ca306a3b25fb72540a353f6f4cfee724, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154502650016232040, guid: ca306a3b25fb72540a353f6f4cfee724, type: 3}
-      propertyPath: Speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6997600507262395759, guid: ca306a3b25fb72540a353f6f4cfee724, type: 3}
-      propertyPath: m_Size.x
-      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 8162572314914849659, guid: ca306a3b25fb72540a353f6f4cfee724, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11232,10 +11192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Slime
       objectReference: {fileID: 0}
-    - target: {fileID: 1898336834906664810, guid: 2e55cc41de7770744b51a267fa7070d9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 2479724438138942861, guid: 2e55cc41de7770744b51a267fa7070d9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1874907696}
     - target: {fileID: 5091955884658595417, guid: 2e55cc41de7770744b51a267fa7070d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.4
@@ -11276,22 +11236,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5328111936946318335, guid: 2e55cc41de7770744b51a267fa7070d9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5371895466325475471, guid: 2e55cc41de7770744b51a267fa7070d9, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870626865352210258, guid: 2e55cc41de7770744b51a267fa7070d9, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7153568323109300322, guid: 2e55cc41de7770744b51a267fa7070d9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11309,26 +11253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green Slime
       objectReference: {fileID: 0}
-    - target: {fileID: 1845889550398476927, guid: 5f702954931f63c43aaa16552f68db37, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1928054032060544247, guid: 5f702954931f63c43aaa16552f68db37, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4952699985161699984, guid: 5f702954931f63c43aaa16552f68db37, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5859109358504246478, guid: 5f702954931f63c43aaa16552f68db37, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6405760037950256905, guid: 5f702954931f63c43aaa16552f68db37, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 7848375063932688638, guid: 5f702954931f63c43aaa16552f68db37, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1874907696}
     - target: {fileID: 8446686410923104552, guid: 5f702954931f63c43aaa16552f68db37, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1

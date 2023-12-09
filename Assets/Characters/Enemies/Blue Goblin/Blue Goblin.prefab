@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 5887433605653461690}
   - component: {fileID: 6976049227533592136}
   - component: {fileID: 7089768876268725911}
+  - component: {fileID: 8981983034728834874}
   m_Layer: 0
   m_Name: Blue Goblin
   m_TagString: Enemy
@@ -234,6 +235,8 @@ MonoBehaviour:
   XPAward: 75
   animator: {fileID: 5887433605653461690}
   rb: {fileID: 9131356565729047691}
+  expText: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!60 &7089768876268725911
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -290,6 +293,29 @@ PolygonCollider2D:
       - {x: -0.02883304, y: 0.12852159}
       - {x: -0.08688747, y: 0.109105065}
   m_UseDelaunayMesh: 0
+--- !u!114 &8981983034728834874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3397161648873055549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ff2754e1e1a0e4f88a32096e5f113b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistanceThreshold: 1
+  attackDistanceThreshold: 0.225
+  attackDelay: 2
+  passedTime: 2
+  KonckbackForce: 50
+  enemy: {fileID: 6976049227533592136}
+  player: {fileID: 0}
+  animator: {fileID: 5887433605653461690}
+  rb: {fileID: 9131356565729047691}
+  attackColliderLeft: {fileID: 0}
+  attackColliderRight: {fileID: 7587779594484452722}
 --- !u!1 &4024891602568653912
 GameObject:
   m_ObjectHideFlags: 0

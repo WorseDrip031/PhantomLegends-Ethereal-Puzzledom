@@ -21,33 +21,21 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1138878176, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - time: 0.1
-      value: {fileID: -567488979, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - time: 0.2
-      value: {fileID: 1523205215, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - time: 0.3
-      value: {fileID: 236291908, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - time: 0.4
-      value: {fileID: -399629785, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - time: 0.5
       value: {fileID: -109532098, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - time: 0.6
+    - time: 0.1
       value: {fileID: 1502118966, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - time: 0.7
+    - time: 0.2
       value: {fileID: -611149354, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - time: 0.8
+    - time: 0.3
       value: {fileID: -1497323662, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - time: 0.9
+    - time: 0.4
       value: {fileID: -1643366011, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - time: 1
+    - time: 0.5
       value: {fileID: -1138527918, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - time: 1.1
+    - time: 0.6
       value: {fileID: -1730839631, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - time: 1.2
+    - time: 0.7
       value: {fileID: -1453342028, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - time: 1.3
-      value: {fileID: 1227254663, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -70,11 +58,6 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1138878176, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - {fileID: -567488979, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - {fileID: 1523205215, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - {fileID: 236291908, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - {fileID: -399629785, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
     - {fileID: -109532098, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
     - {fileID: 1502118966, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
     - {fileID: -611149354, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
@@ -83,13 +66,12 @@ AnimationClip:
     - {fileID: -1138527918, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
     - {fileID: -1730839631, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
     - {fileID: -1453342028, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
-    - {fileID: 1227254663, guid: ff0aea90dd6c5b94a8efd0a007bf85d7, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.4
+    m_StopTime: 0.8
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -108,4 +90,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.1
+    functionName: EnemyAttackRight
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.3
+    functionName: EnemyEndAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

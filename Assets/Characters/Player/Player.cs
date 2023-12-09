@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] float MaxHealth;
     [SerializeField] float Health;
     [SerializeField] float Attack;
     [SerializeField] float Defense;
@@ -12,19 +13,30 @@ public class Player : MonoBehaviour
 
     [SerializeField] Animator animator;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] HealthBar healthBar;
 
     private bool isAlive = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        healthBar.SetMaxHealth(MaxHealth);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public float getPlayerMaxHealth()
+    {
+        return MaxHealth;
+    }
+
+    public float getPlayerHealth()
+    {
+        return Health;
     }
 
     public float getPlayerAttack()
@@ -54,6 +66,7 @@ public class Player : MonoBehaviour
         {
             animator.SetTrigger("BeingHit");
             Health -= damageDealt;
+            healthBar.SetHealth(Health);
             if ((Health <= 0) && (isAlive))
             {
                 isAlive = false;

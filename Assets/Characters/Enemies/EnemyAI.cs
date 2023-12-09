@@ -21,6 +21,7 @@ public class EnemyAI : MonoBehaviour
     private Vector2 movement;
     private bool canMove = true;
     private bool isAttacking = false;
+    private bool hasAttackedAlready = false;
 
     // Start is called before the first frame update
     void Start()
@@ -91,6 +92,7 @@ public class EnemyAI : MonoBehaviour
         isAttacking = false;
         attackColliderLeft.enabled = false;
         attackColliderRight.enabled = false;
+        hasAttackedAlready = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -100,12 +102,16 @@ public class EnemyAI : MonoBehaviour
             Player player = other.GetComponent<Player>();
             if (player != null)
             {
-                Vector2 enemyPosition = gameObject.GetComponentInParent<Transform>().position;
-                Vector2 hitDirection = ((Vector2)other.gameObject.transform.position - enemyPosition).normalized;
-                Vector2 knockback = hitDirection * KonckbackForce;
+                if (!hasAttackedAlready)
+                {
+                    hasAttackedAlready = true;
 
-                player.InflictDamage(enemy.getEnemyAttack(), knockback);
-                print("Blue Slime Attacks");
+                    Vector2 enemyPosition = gameObject.GetComponentInParent<Transform>().position;
+                    Vector2 hitDirection = ((Vector2)other.gameObject.transform.position - enemyPosition).normalized;
+                    Vector2 knockback = hitDirection * KonckbackForce;
+
+                    player.InflictDamage(enemy.getEnemyAttack(), knockback);
+                }
             }
         }
     }

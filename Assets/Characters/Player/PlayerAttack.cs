@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] float KonckbackForce;
 
     private bool isAttacking = false;
+    private bool hasAttackedAlready = false;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +67,7 @@ public class PlayerAttack : MonoBehaviour
         swordColliderLeft.enabled = false;
         swordColliderRight.enabled = false;
         isAttacking = false;
+        hasAttackedAlready = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -74,15 +77,20 @@ public class PlayerAttack : MonoBehaviour
             Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null)
             {
-                Vector2 playerPosition = gameObject.GetComponentInParent<Transform>().position;
-                Vector2 hitDirection = ((Vector2)other.gameObject.transform.position - playerPosition).normalized;
-                Vector2 knockback = hitDirection * KonckbackForce;
-
-
-                float xp_gained = enemy.InflictDamage(player.getPlayerAttack(), knockback);
-                if (xp_gained > 0)
+                if (!hasAttackedAlready)
                 {
-                    player.increaseXP(xp_gained);
+                    hasAttackedAlready = true;
+
+                    Vector2 playerPosition = gameObject.GetComponentInParent<Transform>().position;
+                    Vector2 hitDirection = ((Vector2)other.gameObject.transform.position - playerPosition).normalized;
+                    Vector2 knockback = hitDirection * KonckbackForce;
+
+
+                    float xp_gained = enemy.InflictDamage(player.getPlayerAttack(), knockback);
+                    if (xp_gained > 0)
+                    {
+                        player.increaseXP(xp_gained);
+                    }
                 }
             }
         }

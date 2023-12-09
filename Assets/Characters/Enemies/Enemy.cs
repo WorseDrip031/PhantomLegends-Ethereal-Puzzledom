@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] Animator animator;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] ExpText expText;
+    [SerializeField] Canvas canvas;
 
     private bool isAlive = true;
 
@@ -57,6 +59,11 @@ public class Enemy : MonoBehaviour
 
     public void Defeated()
     {
+        ExpText spawnedExpText = Instantiate(expText);
+        spawnedExpText.setText("+" + XPAward + " EXP");
+        RectTransform textTransform = spawnedExpText.GetComponent<RectTransform>();
+        textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        textTransform.SetParent(canvas.transform);
         animator.SetTrigger("Defeated");
         rb.simulated = false;
     }

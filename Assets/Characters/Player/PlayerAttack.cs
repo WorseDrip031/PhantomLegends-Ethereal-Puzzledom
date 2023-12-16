@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -13,11 +12,17 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] Player player;
     [SerializeField] Animator animator;
+    [SerializeField] AudioManager audioManager;
 
     [SerializeField] float KonckbackForce;
 
     private bool isAttacking = false;
-    private bool hasAttackedAlready = false;
+    private List<int> enemiesAttacked = new List<int>();
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -38,24 +43,28 @@ public class PlayerAttack : MonoBehaviour
 
     public void PlayerAttackUp()
     {
+        audioManager.PlaySFX(audioManager.swordAttack);
         swordColliderUp.enabled = true;
         isAttacking = true;
     }
 
     public void PlayerAttackDown()
     {
+        audioManager.PlaySFX(audioManager.swordAttack);
         swordColliderDown.enabled = true;
         isAttacking = true;
     }
 
     public void PlayerAttackLeft()
     {
+        audioManager.PlaySFX(audioManager.swordAttack);
         swordColliderLeft.enabled = true;
         isAttacking = true;
     }
 
     public void PlayerAttackRight()
     {
+        audioManager.PlaySFX(audioManager.swordAttack);
         swordColliderRight.enabled = true;
         isAttacking = true;
     }
@@ -67,7 +76,7 @@ public class PlayerAttack : MonoBehaviour
         swordColliderLeft.enabled = false;
         swordColliderRight.enabled = false;
         isAttacking = false;
-        hasAttackedAlready = false;
+        enemiesAttacked.Clear();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -77,20 +86,23 @@ public class PlayerAttack : MonoBehaviour
             Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null)
             {
-                if (!hasAttackedAlready)
+                foreach(int enemyID in enemiesAttacked)
                 {
-                    hasAttackedAlready = true;
-
-                    Vector2 playerPosition = gameObject.GetComponentInParent<Transform>().position;
-                    Vector2 hitDirection = ((Vector2)other.gameObject.transform.position - playerPosition).normalized;
-                    Vector2 knockback = hitDirection * KonckbackForce;
-
-
-                    float xp_gained = enemy.InflictDamage(player.getPlayerAttack(), knockback);
-                    if (xp_gained > 0)
+                    if (enemyID == enemy.enemyID)
                     {
-                        player.increaseXP(xp_gained);
+                        return;
                     }
+                }
+                enemiesAttacked.Add(enemy.enemyID);
+
+                Vector2 playerPosition = gameObject.GetComponentInParent<Transform>().position;
+                Vector2 hitDirection = ((Vector2)other.gameObject.transform.position - playerPosition).normalized;
+                Vector2 knockback = hitDirection * KonckbackForce;
+
+                int xp_gained = enemy.InflictDamage(player.getPlayerAttack(), knockback);
+                if (xp_gained > 0)
+                {
+                    player.increaseXP(xp_gained);
                 }
             }
         }

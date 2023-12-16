@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Audio
+  - WorldItem
+  - FogOfWar
+  - PlayerLineOfSight
+  - Interact
+  - Canvas
   layers:
   - Default
   - TransparentFX
@@ -15,8 +21,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Interact
+  - FogOfWar
   - 
   - 
   - 

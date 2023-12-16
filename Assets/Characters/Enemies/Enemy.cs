@@ -8,19 +8,24 @@ public class Enemy : MonoBehaviour
     [SerializeField] float Attack;
     [SerializeField] float Defense;
     [SerializeField] float Speed;
-    [SerializeField] float XPAward;
+    [SerializeField] int XPAward;
+    [SerializeField] WorldItem WorldItemToDrop;
 
     [SerializeField] Animator animator;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] ExpText expText;
-    [SerializeField] Canvas canvas;
+    private Canvas canvas;
 
     private bool isAlive = true;
+    private bool isItemDropped = false;
+
+    public int enemyID;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        enemyID = EnemyID.GetEnemyID();
+        canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
     }
 
     // Update is called once per frame
@@ -39,13 +44,14 @@ public class Enemy : MonoBehaviour
         return Speed;
     }
 
-    public float InflictDamage(float damage, Vector2 knockback)
+    public int InflictDamage(float damage, Vector2 knockback)
     {
         float damageDealt = damage - Defense;
         if (damageDealt > 0)
         {
             animator.SetTrigger("BeingHit");
             Health -= damageDealt;
+            Debug.Log(Health);
             if ((Health <= 0) && (isAlive))
             {
                 isAlive = false;
@@ -60,7 +66,7 @@ public class Enemy : MonoBehaviour
     public void Defeated()
     {
         ExpText spawnedExpText = Instantiate(expText);
-        spawnedExpText.setText("+" + XPAward + " EXP");
+        spawnedExpText.setText("+" + XPAward + " XP");
         RectTransform textTransform = spawnedExpText.GetComponent<RectTransform>();
         textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         textTransform.SetParent(canvas.transform);
@@ -70,6 +76,14 @@ public class Enemy : MonoBehaviour
 
     public void RemoveEnemy()
     {
+        if (WorldItemToDrop != null)
+        {
+            if (!isItemDropped)
+            {
+                Instantiate(WorldItemToDrop, transform.position, Quaternion.identity);
+                isItemDropped = true;
+            }
+        }
         Destroy(gameObject);
     }
 }

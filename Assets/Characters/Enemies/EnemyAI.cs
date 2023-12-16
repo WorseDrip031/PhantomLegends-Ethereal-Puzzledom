@@ -11,13 +11,13 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float KonckbackForce;
 
     [SerializeField] Enemy enemy;
-    [SerializeField] Player player;
     [SerializeField] Animator animator;
     [SerializeField] Rigidbody2D rb;
 
     [SerializeField] Collider2D attackColliderLeft;
     [SerializeField] Collider2D attackColliderRight;
 
+    private Player player;
     private Vector2 movement;
     private bool canMove = true;
     private bool isAttacking = false;
@@ -26,7 +26,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame

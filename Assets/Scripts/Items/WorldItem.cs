@@ -8,16 +8,19 @@ public class WorldItem : MonoBehaviour
     [SerializeField] ExpText expText;
 
     private Canvas canvas;
+    private AudioManager audioManager;
 
     private void Awake()
     {
         canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     public Item GetItem() { return item; }
 
     public void Consume()
     {
+        audioManager.PlaySFX(audioManager.itemPickup);
         ExpText spawnedExpText = Instantiate(expText);
 
         if (item.itemType == Item.ItemType.Weapon || item.itemType == Item.ItemType.Armor)

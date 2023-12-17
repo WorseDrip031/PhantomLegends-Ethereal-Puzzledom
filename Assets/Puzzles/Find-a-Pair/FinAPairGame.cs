@@ -65,6 +65,7 @@ public class FinAPairGame : MonoBehaviour
         }
 
         timeLived = 0;
+        movement = new Vector2(1, 0);
     }
 
     public void SetDoor(Door door)
@@ -93,53 +94,49 @@ public class FinAPairGame : MonoBehaviour
     //--------------------------------------------------------------- movement
 
 
-    private bool hasMoved = false;
     private Vector2 movement;
 
-    void Update()
+    void FixedUpdate()
     {
         int horizontal = (int)movement.x;
         int vertical = (int)movement.y;
 
         if (horizontal != 0 || vertical != 0)
         {
-            if (!hasMoved)
+            if (selectedCard != null)
             {
-                hasMoved = true;
+                selectedCard.Unselect();
+            }
 
-                if (selectedCard != null)
-                    selectedCard.Unselect();
+            int currentCol = -1;
+            int currentRow = -1;
 
-                int currentCol = -1;
-                int currentRow = -1;
-
-                for (int i = 0; i < gridCols; i++)
+            for (int i = 0; i < gridCols; i++)
+            {
+                for (int j = 0; j < gridRows; j++)
                 {
-                    for (int j = 0; j < gridRows; j++)
+                    if (cardsGrid[i, j] == selectedCard)
                     {
-                        if (cardsGrid[i, j] == selectedCard)
-                        {
-                            currentCol = i;
-                            currentRow = j;
-                            break;
-                        }
+                        currentCol = i;
+                        currentRow = j;
+                        break;
                     }
                 }
-
-                int col = Mathf.Clamp(currentCol + horizontal, 0, gridCols - 1);
-                int row = Mathf.Clamp(currentRow + vertical, 0, gridRows - 1);
-
-                selectedCard = cardsGrid[col, row];
-                selectedCard.Select();
-
-                movement = new Vector2(0, 0);
             }
-        }
-        else
-        {
-            hasMoved = false;
-        }
 
+            int col = Mathf.Clamp(currentCol + horizontal, 0, gridCols - 1);
+            int row = Mathf.Clamp(currentRow + vertical, 0, gridRows - 1);
+
+            selectedCard = cardsGrid[col, row];
+            selectedCard.Select();
+
+            movement = new Vector2(0, 0);
+
+        }
+    }
+
+    void Update()
+    {
         if (score == 6)
         {
             isWin = true;

@@ -18,6 +18,9 @@ public class GameScript : MonoBehaviour
 
     private PlayerInput playerInput;
 
+    private float swappedTTL = 0f;
+    private bool canSwap = true;
+
     void Start()
     {
         Shuffle();
@@ -44,6 +47,12 @@ public class GameScript : MonoBehaviour
                     Destroy(gameObject);
                 }
             }
+        }
+
+        swappedTTL += Time.deltaTime;
+        if (swappedTTL > 0.2f)
+        {
+            canSwap = true;
         }
     }
 
@@ -78,7 +87,13 @@ public class GameScript : MonoBehaviour
 
     void OnSubmit()
     {
-        SwapWithEmpty();
+        if (canSwap)
+        {
+            swappedTTL = 0;
+            canSwap = false;
+            SwapWithEmpty();
+            Debug.Log("Yeahn");
+        }
     }
 
     void OnBack()
@@ -89,7 +104,7 @@ public class GameScript : MonoBehaviour
 
     void SwapWithEmpty()
     {
-        if (tiles[selectedIndex] != null && Vector2.Distance(emptySpace.position, tiles[selectedIndex].transform.position) < 0.4)
+        if (tiles[selectedIndex] != null && Vector2.Distance(emptySpace.position, tiles[selectedIndex].transform.position) < 0.4f)
         {
             Vector2 lastEmptySpacePosition = emptySpace.position;
             TilesScript thisTile = tiles[selectedIndex].transform.GetComponent<TilesScript>();
@@ -102,6 +117,7 @@ public class GameScript : MonoBehaviour
             tiles[emptySpaceIndex] = tiles[tileIndex];
             tiles[tileIndex] = null;
             emptySpaceIndex = tileIndex;
+            Debug.Log("Changed position");
         }
     }
 

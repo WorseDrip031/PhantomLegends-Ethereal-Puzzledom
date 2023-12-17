@@ -28,10 +28,10 @@ public class Player : MonoBehaviour
     [SerializeField] WorldItem SteelArmor;
     [SerializeField] WorldItem MithrilArmor;
 
-    private bool isAlive = true;
+    public bool isAlive = true;
     private int playerLevel = 1;
     private int availableStatPoints = 0;
-    private int[] xpNeededForLevelUp = {0, 100, 350, 400};
+    private int[] xpNeededForLevelUp = {0, 100, 350, 700, 1100, 1600, 2200, 2900, 3450, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000};
     public Inventory inventory;
     private Item activeWeapon;
     private Item activeArmor;
@@ -39,12 +39,14 @@ public class Player : MonoBehaviour
     private float mapTTL;
     private Canvas canvas;
 
+    private AudioManager audioManager;
     private void Awake()
     {
         inventory = new Inventory();
         activeWeapon = inventory.GetDefaultWeapon();
         activeArmor = inventory.GetDefaultArmor();
         canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     void Start()
@@ -308,6 +310,7 @@ public class Player : MonoBehaviour
         textTransform.SetParent(canvas.transform);
         playerLevel += 1;
         availableStatPoints += 2;
+        audioManager.PlaySFX(audioManager.levelUp);
         Debug.Log("Level reached: " + playerLevel);
     }
 
@@ -336,7 +339,7 @@ public class Player : MonoBehaviour
 
     public void RemovePlayer()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         youDiedControl.YouDied();
         isAlive = false;
     }
@@ -391,6 +394,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        /*
         if (isMapLineOfSightActive)
         {
             mapTTL += Time.deltaTime;
@@ -401,5 +405,6 @@ public class Player : MonoBehaviour
                 Debug.Log("Map Inactive");
             }
         }
+        */
     }
 }

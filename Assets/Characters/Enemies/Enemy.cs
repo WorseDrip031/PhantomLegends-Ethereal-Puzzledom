@@ -20,6 +20,12 @@ public class Enemy : MonoBehaviour
     private bool isItemDropped = false;
 
     public int enemyID;
+    private AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +71,7 @@ public class Enemy : MonoBehaviour
 
     public void Defeated()
     {
+        audioManager.PlaySFX(audioManager.goblinDeath);
         ExpText spawnedExpText = Instantiate(expText);
         spawnedExpText.setText("+" + XPAward + " XP");
         RectTransform textTransform = spawnedExpText.GetComponent<RectTransform>();

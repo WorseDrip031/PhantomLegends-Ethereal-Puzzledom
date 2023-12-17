@@ -46,8 +46,11 @@ public class EnemyAI : MonoBehaviour
 
                 if (passedTime >= attackDelay)
                 {
-                    passedTime = 0;
-                    animator.SetTrigger("Attacking");
+                    if (player.isAlive)
+                    {
+                        passedTime = 0;
+                        animator.SetTrigger("Attacking");
+                    }
                 }
             }
             else
